@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đơn Hàng Của Bạn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: #ffffff;
+            border: 0px solid #dddddd;
+            border-radius: 0px;
+            overflow: hidden;
+        }
+
+        td,
+        th {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .header,
+        .footer {
+            background-color: #0f2633;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #f4f4f4;
+            color: #555555;
+            font-size: 12px;
+        }
+
+        .order-details {
+            border: 0px solid #dddddd;
+            border-radius: 5px;
+        }
+
+        .order-details th,
+        .order-details td {
+            border-bottom: 1px solid #dddddd;
+        }
+
+
+        /* Responsive Design */
+        @media only screen and (max-width: 600px) {
+            table {
+                width: 100% !important;
+                border: none;
+            }
+
+            td,
+            th {
+                padding: 10px !important;
+                font-size: 14px !important;
+            }
+        }
+
+        /* Dark Mode */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1e1e1e;
+            }
+
+            table {
+                background: #333333;
+                border: 1px solid #444444;
+            }
+
+            .header {
+                background-color: #0d1e28;
+                color: #ffffff;
+            }
+
+            .footer {
+                background-color: #0f2430;
+                color: #aaaaaa;
+            }
+
+            .order-details th {
+                background-color: #555555;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <table style="border-radius: 15px;">
+        <tr>
+            <td class="header">
+                <div class="mq"> <a href="https://www.facebook.com/design.itus" target="_blank">
+                        <img alt="Design ITUS" src="https://e.hypermatic.com/956cb4aa15e86ba3ab6bd743319f6c79.png"
+                            width="177" height="auto"></a>
+                </div>
+                <h1>Xác Nhận Đơn Hàng #{{order_number}}</h1>
+            </td>
+        </tr>
+        <tr>
+            <td class="content" style="padding-left: 20px; padding-right: 20px;">
+                <h2>Xin chào bạn {{customer_name}},</h2>
+                <p>Cảm ơn bạn đã đặt hàng tại Design ITUS. Dưới đây là thông tin chi tiết về đơn hàng của bạn.</p>
+
+                <div class="order-details">
+                    <h3 style="text-align: center">Chi Tiết Đơn Hàng</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sản Phẩm</th>
+                                <th style="text-align: right;">Số Lượng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    {{product_name}}
+                                </td>
+                                <td style="text-align: right; vertical-align: top;">
+                                    {{quantity}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>Tổng đơn</p>
+                            </td>
+                            <td style="text-align: right;">
+                                <h1 style="text-align: right;">{{order_total}} VNĐ</h1>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Số Đơn Hàng:</strong> {{order_number}}</p>
+                <p><strong>Thông Tin Liên Lạc:</strong> {{phone_number}}</p>
+                <p><strong>Hình Thức Nhận Hàng:</strong> {{delivery_method}}</p>
+                <p><strong>Trạng Thái Thanh Toán:</strong> {{payment_status}}</p>
+
+                <p>Bạn vui lòng kiểm tra lại đơn hàng và reply lại mail này nếu có sai sót gì nhé!</p>
+                <p>Một lần nữa, cảm ơn bạn đã đặt hàng tại Design ITUS!</p>
+                <p>
+                    Trân trọng, <span style="display: block; margin-bottom: 5px;"></span>
+                    <strong>Design ITUS</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td class=" footer">
+                Câu lạc bộ học thuật thiết kế <strong>Design ITUS</strong> <br>
+                Khoa Công nghệ Thông tin <br>
+                Trường Đại học Khoa học tự nhiên, ĐHQG-HCM <br>
+                <p>© 2024 Design ITUS</p>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
